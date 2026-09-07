@@ -4,220 +4,354 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Política de Privacidade — Calma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f7f8fb;
-    color: #2b3242;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  :root{
+    --bg:#f6f8fc;
+    --card:#ffffff;
+    --ink:#2b3242;
+    --ink-soft:#5a6478;
+    --azul:#5b7cc7;
+    --azul-fundo:#eaf0fb;
+    --lavanda:#efeafb;
+    --borda:#e3e8f2;
+    --destaque:#fff3cd;
+    --destaque-borda:#f0dfa0;
+    --alerta:#fdecec;
+    --alerta-borda:#f3c9c9;
+    --alerta-ink:#9a3b3b;
   }
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    line-height:1.7;
+    font-size:16px;
   }
-  .cabecalho {
-    text-align: center;
-    margin-bottom: 36px;
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px 80px}
+
+  /* Cabeçalho */
+  header{
+    background:linear-gradient(160deg,#6d8fd6 0%,#8f7fd0 100%);
+    color:#fff;
+    padding:44px 20px 38px;
+    text-align:center;
+    border-radius:0 0 28px 28px;
   }
-  .cabecalho .coala {
-    font-size: 48px;
+  header .coala{font-size:44px;line-height:1;display:block;margin-bottom:6px}
+  header h1{
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:26px;
+    margin:0 0 4px;
+    letter-spacing:.2px;
   }
-  h1 {
-    font-size: 26px;
-    font-weight: 800;
-    color: #2b3242;
-    margin: 8px 0 4px;
+  header p{margin:0;opacity:.92;font-size:15px}
+
+  main{margin-top:26px}
+  .meta{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:13.5px;
+    margin:0 0 26px;
   }
-  .atualizacao {
-    font-size: 13.5px;
-    color: #8a92a3;
+
+  section{
+    background:var(--card);
+    border:1px solid var(--borda);
+    border-radius:16px;
+    padding:22px 22px 6px;
+    margin:0 0 16px;
   }
-  h2 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #5b7cc7;
-    margin-top: 34px;
-    margin-bottom: 10px;
+  h2{
+    font-family:'Nunito',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    color:var(--ink);
+    margin:2px 0 12px;
+    display:flex;
+    align-items:center;
+    gap:9px;
   }
-  p, li {
-    font-size: 15.5px;
-    color: #4a5266;
+  h2 .n{
+    flex:none;
+    width:26px;height:26px;
+    background:var(--azul-fundo);
+    color:var(--azul);
+    border-radius:8px;
+    font-size:13px;
+    font-weight:800;
+    display:flex;align-items:center;justify-content:center;
   }
-  ul {
-    padding-left: 20px;
+  h3{
+    font-family:'Nunito',sans-serif;
+    font-size:15.5px;
+    font-weight:700;
+    color:var(--ink);
+    margin:18px 0 6px;
   }
-  li {
-    margin-bottom: 6px;
+  p{margin:0 0 14px}
+  ul{margin:0 0 14px;padding-left:22px}
+  li{margin:0 0 8px}
+  strong{color:var(--ink);font-weight:600}
+  a{color:var(--azul);font-weight:600}
+
+  /* Campo para você preencher */
+  .preencher{
+    background:var(--destaque);
+    border:1px dashed var(--destaque-borda);
+    border-radius:6px;
+    padding:1px 7px;
+    font-weight:700;
+    color:#8a6d1a;
+    font-family:'Inter',sans-serif;
   }
-  .destaque {
-    background-color: #eef1fb;
-    border-left: 4px solid #5b7cc7;
-    border-radius: 8px;
-    padding: 16px 18px;
-    margin: 18px 0;
+
+  /* Caixa de aviso importante */
+  .aviso{
+    background:var(--alerta);
+    border:1px solid var(--alerta-borda);
+    border-radius:14px;
+    padding:20px 22px 8px;
+    margin:0 0 16px;
   }
-  .alerta {
-    background-color: #fdecec;
-    border-left: 4px solid #d97a7a;
-    border-radius: 8px;
-    padding: 16px 18px;
-    margin: 18px 0;
+  .aviso h2{color:var(--alerta-ink)}
+  .aviso h2 .n{background:#f6d5d5;color:var(--alerta-ink)}
+  .aviso .cvv{
+    display:inline-block;
+    background:#fff;
+    border:1px solid var(--alerta-borda);
+    border-radius:10px;
+    padding:8px 14px;
+    font-weight:700;
+    color:var(--alerta-ink);
+    margin-bottom:14px;
   }
-  .alerta p {
-    color: #9a3b3b;
-    margin: 0;
+
+  /* Índice */
+  .indice{
+    background:var(--lavanda);
+    border:1px solid #e0d7f5;
   }
-  a {
-    color: #5b7cc7;
-    font-weight: 600;
+  .indice h2 .n{background:#e0d7f5;color:#7a5bc4}
+  .indice ol{margin:0 0 10px;padding-left:20px;columns:2;column-gap:26px}
+  .indice li{margin-bottom:6px;font-size:14.5px}
+  .indice a{font-weight:500;color:var(--ink-soft);text-decoration:none}
+  .indice a:hover{color:var(--azul)}
+
+  footer{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:13px;
+    margin-top:30px;
   }
-  .contato {
-    background-color: #ffffff;
-    border: 1px solid #e4e7f0;
-    border-radius: 14px;
-    padding: 18px 20px;
-    margin-top: 10px;
+  footer .frase{
+    font-family:'Nunito',sans-serif;
+    font-weight:700;
+    color:var(--azul);
+    font-size:15px;
+    margin-bottom:6px;
   }
-  .rodape {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 13.5px;
-    color: #b0b6c4;
+
+  @media (max-width:520px){
+    .indice ol{columns:1}
+    header h1{font-size:23px}
   }
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="cabecalho">
-      <div class="coala">🐨</div>
-      <h1>Política de Privacidade — Calma</h1>
-      <div class="atualizacao">Última atualização: 02 de julho de 2026</div>
+
+<header>
+  <span class="coala">🐨</span>
+  <h1>Política de Privacidade</h1>
+  <p>Aplicativo Calma</p>
+</header>
+
+<div class="wrap">
+  <main>
+    <p class="meta">Última atualização: <strong>7 de setembro de 2026</strong></p>
+
+    <!-- ÍNDICE -->
+    <section class="indice">
+      <h2><span class="n">☰</span>O que você vai encontrar aqui</h2>
+      <ol>
+        <li><a href="#quem">Quem somos</a></li>
+        <li><a href="#dados">Dados que coletamos</a></li>
+        <li><a href="#onde">Onde seus dados ficam</a></li>
+        <li><a href="#uso">Para que usamos</a></li>
+        <li><a href="#sensivel">Dados de saúde</a></li>
+        <li><a href="#base">Base legal (LGPD)</a></li>
+        <li><a href="#terceiros">Com quem compartilhamos</a></li>
+        <li><a href="#direitos">Seus direitos</a></li>
+        <li><a href="#seguranca">Segurança</a></li>
+        <li><a href="#exclusao">Como apagar seus dados</a></li>
+        <li><a href="#menores">Idade mínima</a></li>
+        <li><a href="#profissional">Aviso importante</a></li>
+        <li><a href="#alteracoes">Mudanças nesta política</a></li>
+        <li><a href="#contato">Como falar com a gente</a></li>
+      </ol>
+    </section>
+
+    <!-- 1 -->
+    <section id="quem">
+      <h2><span class="n">1</span>Quem somos</h2>
+      <p>O <strong>Calma</strong> é um aplicativo de bem-estar e apoio emocional feito para mulheres brasileiras. Levamos a sua privacidade muito a sério — este app lida com coisas íntimas, e a gente sabe o peso disso.</p>
+      <p>Esta política explica, de forma clara, quais dados o Calma coleta, como usamos e quais são os seus direitos, em conformidade com a <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD)</strong>.</p>
+      <p>Responsável pelo tratamento dos seus dados (controlador):<br>
+      <strong>Eden Santos Teixeira</strong><br>
+      Contato: <a href="mailto:calma.appoficial@gmail.com">calma.appoficial@gmail.com</a></p>
+    </section>
+
+    <!-- 2 -->
+    <section id="dados">
+      <h2><span class="n">2</span>Dados que coletamos</h2>
+
+      <h3>Dados que você escolhe registrar</h3>
+      <p>Tudo o que você guarda no Calma é você quem decide colocar. Isso pode incluir:</p>
+      <ul>
+        <li>Textos do <strong>diário emocional</strong> e os sentimentos que você anota;</li>
+        <li>Fotos e recadinhos que você salva no <strong>Cofre Emocional</strong>;</li>
+        <li>Mensagens que você troca no <strong>chat com a Fernanda</strong>;</li>
+        <li>Datas do seu <strong>ciclo menstrual</strong>, se você optar por registrar;</li>
+        <li>Uso do <strong>Botão de Pânico</strong> e das técnicas de respiração e ancoragem.</li>
+      </ul>
+
+      <h3>O que o app anota sozinho — e que não sai daqui</h3>
+      <p>Para o Calma funcionar, ele guarda algumas coisas <strong>no seu próprio aparelho</strong>: os seus dias de cuidado, quais ferramentas você usou, as crises que você atravessou e as suas preferências (voz, vibração, horários dos lembretes). Nada disso é enviado para lugar nenhum.</p>
+      <p>O Calma <strong>não tem conta nem login</strong>, e <strong>não pede</strong> nome completo, CPF, contatos da sua agenda nem sua localização. Não há publicidade, nem rastreamento, nem ferramenta de análise de uso.</p>
+    </section>
+
+    <!-- 3 -->
+    <section id="onde">
+      <h2><span class="n">3</span>Onde seus dados ficam</h2>
+      <p>Esta é a parte mais importante — e a mais tranquilizadora:</p>
+      <ul>
+        <li>💾 <strong>Seus registros ficam no seu próprio celular.</strong> Diário, Cofre Emocional, fotos, vídeos, áudios e datas do ciclo são guardados apenas no seu aparelho. Não subimos isso para servidores nem temos acesso a eles.</li>
+        <li>💬 <strong>Para a Fernanda responder,</strong> o texto da sua conversa é enviado com segurança para o serviço de inteligência artificial que gera a resposta, e usado só para criar aquela resposta.</li>
+        <li>🧠 <strong>Junto com a sua mensagem vai um resumo curto do que você registrou</strong> — para a Fernanda não começar do zero a cada conversa. Esse resumo tem: os seus <strong>três últimos registros do diário</strong> (data, humor, marcadores e até 160 caracteres do que você escreveu), as <strong>suas três últimas falas</strong> da conversa anterior, a <strong>fase do seu ciclo</strong>, o nome que você deu ao coala e o seu número de dias de cuidado. Ele é usado apenas para gerar a resposta e não fica guardado depois.</li>
+        <li>🔊 <strong>Para você ouvir a voz da Fernanda,</strong> o texto a ser falado é enviado para o serviço que transforma texto em áudio. As falas fixas do app (respiração, SOS, aterramento) já vêm gravadas dentro do aplicativo e funcionam sem internet.</li>
+        <li>🌐 <strong>Essas chamadas passam por um servidor intermediário</strong> (Cloudflare), que existe para manter as chaves de acesso fora do aplicativo. Ele enxerga o endereço de IP da conexão e o usa apenas para limitar excessos de uso; o IP não é guardado.</li>
+      </ul>
+      <div class="aviso" style="background:#eaf0fb;border-color:#c9d7f0">
+        <p><strong>☁️ O Calma não faz cópia dos seus dados na nuvem.</strong> Desde 7 de setembro de 2026 o backup automático do Android está desativado neste aplicativo. Isso significa que o seu diário, o seu Cofre e as suas conversas <strong>não</strong> vão para o Google Drive e <strong>não</strong> voltam se você reinstalar o app em outro aparelho.</p>
+        <p>É de propósito, e tem um preço: se você desinstalar o Calma ou trocar de celular, <strong>os seus registros somem e não têm como voltar</strong>. Escolhemos assim porque o que você escreve aqui é íntimo demais para ficar numa cópia que você não pediu.</p>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section id="uso">
+      <h2><span class="n">4</span>Para que usamos seus dados</h2>
+      <ul>
+        <li>Para o app funcionar e oferecer os recursos de apoio emocional;</li>
+        <li>Para a Fernanda entender o que você escreve e responder de forma acolhedora;</li>
+        <li>Para adaptar o tom da Fernanda à fase do seu ciclo, se você registrar suas datas;</li>
+        <li>Para manter sua sequência de dias e o seu histórico dentro do app;</li>
+        <li>Para melhorar o Calma e corrigir problemas.</li>
+      </ul>
+      <p>Nós <strong>não vendemos</strong> seus dados e <strong>não usamos</strong> seus registros pessoais para propaganda.</p>
+    </section>
+
+    <!-- 5 -->
+    <section id="sensivel">
+      <h2><span class="n">5</span>Dados de saúde e emoções</h2>
+      <p>O que você compartilha no Calma pode revelar informações sobre sua saúde mental e emocional. Pela LGPD, isso é considerado <strong>dado pessoal sensível</strong> e recebe cuidado redobrado.</p>
+      <p>Por isso, só tratamos esses dados <strong>com o seu consentimento</strong>, dado quando você aceita esta política e escolhe usar cada recurso. Você pode retirar esse consentimento a qualquer momento, apagando seus registros ou o app.</p>
+    </section>
+
+    <!-- 6 -->
+    <section id="base">
+      <h2><span class="n">6</span>Base legal do tratamento</h2>
+      <p>Tratamos seus dados com base em:</p>
+      <ul>
+        <li><strong>Seu consentimento</strong> (art. 7º, I e art. 11, I da LGPD), para os dados sensíveis e para o uso dos recursos;</li>
+        <li><strong>Execução do serviço</strong> que você pediu ao usar o app (art. 7º, V);</li>
+        <li><strong>Cumprimento de obrigações legais</strong> quando aplicável.</li>
+      </ul>
+    </section>
+
+    <!-- 7 -->
+    <section id="terceiros">
+      <h2><span class="n">7</span>Com quem compartilhamos</h2>
+      <p>Para alguns recursos funcionarem, contamos com parceiros de tecnologia. Compartilhamos apenas o mínimo necessário:</p>
+      <ul>
+        <li><strong>Anthropic (Claude)</strong> — processa o texto das suas conversas para gerar as respostas da Fernanda.</li>
+        <li><strong>ElevenLabs</strong> — transforma texto em áudio quando você toca no alto-falante de uma mensagem da Fernanda. As falas fixas do app já vêm gravadas dentro dele e não passam por aqui.</li>
+        <li><strong>Cloudflare</strong> — hospeda o servidor intermediário por onde essas chamadas passam, para que as chaves de acesso não fiquem dentro do aplicativo.</li>
+      </ul>
+      <p>O Calma é <strong>gratuito e não tem compras dentro do app</strong>. Não há pagamento, assinatura nem dados de cartão em lugar nenhum.</p>
+      <p>Esses parceiros podem processar dados fora do Brasil. Nesses casos, seguimos as regras da LGPD para transferência internacional. Não compartilhamos seus dados com mais ninguém, exceto se a lei exigir.</p>
+    </section>
+
+    <!-- 8 -->
+    <section id="direitos">
+      <h2><span class="n">8</span>Seus direitos</h2>
+      <p>A LGPD garante a você o direito de, a qualquer momento:</p>
+      <ul>
+        <li>Saber quais dados seus existem e acessá-los;</li>
+        <li>Corrigir dados incompletos ou errados;</li>
+        <li>Pedir a exclusão dos seus dados;</li>
+        <li>Retirar o consentimento que você deu;</li>
+        <li>Pedir informações sobre com quem compartilhamos seus dados.</li>
+      </ul>
+      <p>Como a maioria dos seus dados fica no seu próprio celular, você mesma consegue apagá-los direto no app. Para qualquer outro pedido, é só falar com a gente (seção 14).</p>
+    </section>
+
+    <!-- 9 -->
+    <section id="seguranca">
+      <h2><span class="n">9</span>Segurança</h2>
+      <p>Adotamos medidas para proteger seus dados, como manter seus registros no próprio aparelho e proteger as chaves de acesso aos serviços em um servidor intermediário (elas não ficam expostas no app). As conversas enviadas para gerar respostas trafegam por conexões seguras.</p>
+      <p>Nenhum sistema é 100% infalível, mas trabalhamos para reduzir os riscos ao máximo.</p>
+    </section>
+
+    <!-- 10 -->
+    <section id="exclusao">
+      <h2><span class="n">10</span>Como apagar seus dados</h2>
+      <p>Você pode apagar seus registros a qualquer momento dentro do app, em <strong>Configurações → Apagar meus dados</strong>. Isso tira do aparelho o diário, o ciclo, as conversas, as lembranças do Cofre, a sua sequência e as suas preferências.</p>
+      <p>Se preferir apagar tudo de uma vez, basta desinstalar o Calma — e, como não existe cópia na nuvem, os dados somem de verdade, sem restos em servidor nenhum.</p>
+      <p>Quer confirmar a exclusão ou tem alguma dúvida? Fale com a gente pelo e-mail da seção 14.</p>
+    </section>
+
+    <!-- 11 -->
+    <section id="menores">
+      <h2><span class="n">11</span>Idade mínima</h2>
+      <p>O Calma é destinado a <strong>pessoas maiores de 18 anos</strong>, e é assim que ele é classificado na loja. Não coletamos intencionalmente dados de menores de idade. Se identificarmos esse caso, os dados serão excluídos.</p>
+      <p>Se você tem menos de 18 anos e está passando por um momento difícil, procure um adulto de confiança — e saiba que o <strong>CVV (188)</strong> atende qualquer pessoa, de graça, 24 horas.</p>
+    </section>
+
+    <!-- AVISO IMPORTANTE -->
+    <div class="aviso" id="profissional">
+      <h2><span class="n">!</span>Aviso importante</h2>
+      <p>O Calma é um app de <strong>apoio e regulação emocional</strong>. As técnicas de respiração, ancoragem e as conversas com a Fernanda podem ajudar em momentos de ansiedade ou estresse, mas <strong>não substituem acompanhamento profissional</strong> (psicólogo, psiquiatra ou médico), nem servem para diagnóstico ou emergência.</p>
+      <p>Se você está passando por um momento muito difícil ou pensando em se machucar, procure ajuda agora. Você não está sozinha:</p>
+      <span class="cvv">📞 CVV — 188 (gratuito, 24 horas)</span>
     </div>
 
-    <p>
-      Esta Política de Privacidade explica como o aplicativo <strong>Calma</strong> coleta,
-      usa, armazena e protege as informações das pessoas que o utilizam, em conformidade
-      com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
-    </p>
+    <!-- 13 -->
+    <section id="alteracoes">
+      <h2><span class="n">12</span>Mudanças nesta política</h2>
+      <p>Podemos atualizar esta política de tempos em tempos. Quando isso acontecer, mudamos a data no topo da página. Se a mudança for importante, avisaremos dentro do app.</p>
+    </section>
 
-    <div class="alerta">
-      <p>
-        <strong>Importante:</strong> o Calma é um espaço de apoio e acolhimento emocional.
-        Ele <strong>não substitui</strong> acompanhamento profissional (psicólogo, psiquiatra
-        ou médico) e não deve ser usado para diagnóstico ou emergências. Em caso de crise,
-        ligue para o <strong>CVV — 188</strong> (gratuito, 24h) ou procure atendimento
-        médico imediato.
-      </p>
-    </div>
+    <!-- 14 -->
+    <section id="contato">
+      <h2><span class="n">13</span>Como falar com a gente</h2>
+      <p>Dúvidas sobre privacidade ou pedidos sobre seus dados? Escreva para:</p>
+      <p><strong>E-mail:</strong> <a href="mailto:calma.appoficial@gmail.com">calma.appoficial@gmail.com</a><br>
+      <strong>Responsável:</strong> Eden Santos Teixeira</p>
+      <p>Dentro do app, o caminho é <strong>Configurações → Falar com a gente</strong>.</p>
+    </section>
 
-    <h2>1. Quem é o responsável pelo app</h2>
-    <p>
-      O Calma é desenvolvido e mantido por <strong>Eden Teixeira</strong>, doravante
-      chamado(a) de "responsável" ou "nós". Qualquer dúvida sobre esta política ou sobre
-      os seus dados pode ser enviada para o e-mail de contato listado ao final desta página.
-    </p>
+    <footer>
+      <p class="frase">🐨 Você nunca está sozinha.</p>
+      <p>Calma — feito por brasileira, para brasileiras.</p>
+    </footer>
+  </main>
+</div>
 
-    <h2>2. Quais dados coletamos</h2>
-    <p>Para funcionar, o Calma pode coletar e armazenar:</p>
-    <ul>
-      <li><strong>Dados de uso do app:</strong> conversas com a Fernanda (assistente virtual), registros de diário, marcações de ciclo, uso do botão de pânico, streaks e preferências.</li>
-      <li><strong>Dados técnicos:</strong> identificador do dispositivo, versão do app e informações básicas de funcionamento, usadas apenas para manter o app funcionando corretamente.</li>
-      <li><strong>Dados de voz</strong> (quando você usa recursos de voz): sua fala pode ser processada para gerar respostas faladas da Fernanda.</li>
-    </ul>
-    <p>
-      O Calma <strong>não pede</strong> nome completo, CPF, endereço ou dados financeiros
-      para o uso básico do app.
-    </p>
-
-    <h2>3. Como os dados são usados</h2>
-    <ul>
-      <li>Para que a Fernanda entenda o contexto da conversa e responda de forma acolhedora;</li>
-      <li>Para personalizar recursos como o acompanhamento de ciclo menstrual;</li>
-      <li>Para manter seu histórico de diário e streaks salvos no seu próprio dispositivo;</li>
-      <li>Para melhorar a qualidade e a segurança do app.</li>
-    </ul>
-    <p>Nunca vendemos seus dados pessoais a terceiros.</p>
-
-    <h2>4. Compartilhamento com terceiros</h2>
-    <p>
-      Para funcionar, o Calma envia parte das mensagens de texto e voz para serviços de
-      inteligência artificial de terceiros, que processam essas informações apenas para
-      gerar as respostas da Fernanda:
-    </p>
-    <ul>
-      <li><strong>Anthropic (Claude)</strong> — geração das respostas de texto da Fernanda;</li>
-      <li><strong>ElevenLabs</strong> — geração de voz (quando o recurso de voz é usado).</li>
-    </ul>
-    <p>
-      Esses serviços processam os dados conforme suas próprias políticas de privacidade e
-      não são autorizados por nós a usar essas informações para outros fins que não a
-      geração da resposta solicitada.
-    </p>
-
-    <h2>5. Armazenamento e segurança</h2>
-    <p>
-      A maior parte dos seus dados (diário, streaks, marcações de ciclo, aceite desta
-      política) fica armazenada <strong>localmente no seu próprio celular</strong>, dentro
-      do app. Tomamos medidas razoáveis para proteger as informações que trafegam entre o
-      app e os serviços mencionados acima, mas nenhum sistema é 100% livre de riscos.
-    </p>
-
-    <h2>6. Seus direitos como titular dos dados</h2>
-    <p>De acordo com a LGPD, você tem o direito de:</p>
-    <ul>
-      <li>Confirmar se tratamos dados seus e acessá-los;</li>
-      <li>Corrigir dados incompletos ou desatualizados;</li>
-      <li>Solicitar a exclusão dos seus dados;</li>
-      <li>Revogar o consentimento a qualquer momento;</li>
-      <li>Solicitar informações sobre com quem compartilhamos seus dados.</li>
-    </ul>
-    <p>
-      Como o app armazena a maior parte dos dados localmente, desinstalar o Calma já
-      apaga essas informações do seu dispositivo. Para dúvidas adicionais ou pedidos
-      formais, use o e-mail de contato abaixo.
-    </p>
-
-    <h2>7. Dados sensíveis e saúde mental</h2>
-    <p>
-      Reconhecemos que informações sobre estado emocional, ciclo menstrual e conteúdo de
-      diário são dados sensíveis. Por isso, tratamos essas informações com cuidado
-      especial, evitando coleta desnecessária e priorizando o armazenamento local no
-      próprio dispositivo sempre que possível.
-    </p>
-
-    <h2>8. Menores de idade</h2>
-    <p>
-      O Calma não é direcionado a crianças. Caso identifiquemos uso por menores de 18 anos
-      sem o devido consentimento dos responsáveis legais, poderemos tomar medidas para
-      restringir esse acesso.
-    </p>
-
-    <h2>9. Alterações nesta política</h2>
-    <p>
-      Esta política pode ser atualizada periodicamente. Mudanças relevantes serão
-      comunicadas dentro do próprio app. Recomendamos revisar esta página de tempos em
-      tempos.
-    </p>
-
-    <h2>10. Contato</h2>
-    <div class="contato">
-      <p style="margin: 0 0 6px;"><strong>Responsável:</strong> Eden Teixeira</p>
-      <p style="margin: 0;"><strong>E-mail:</strong> <a href="mailto:calma.appoficial@gmail.com">calma.appoficial@gmail.com</a></p>
-    </div>
-
-    <div class="destaque">
-      <p style="margin:0;">
-        Se você está passando por um momento difícil, não espere: ligue para o
-        <strong>CVV — 188</strong>, gratuito e disponível 24 horas por dia.
-      </p>
-    </div>
-
-    <div class="rodape">
-      🐨 Calma — você nunca está sozinha.
-    </div>
-  </div>
 </body>
 </html>
